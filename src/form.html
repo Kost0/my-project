@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles.css">
+    <title>Form</title>
+</head>
+<body>
+    <main> 
+        <h1>Разработка веб-приложения</h1>
+
+        <p>Заполните форму и мы обязательно свяжемся с вами в ближайшее время</p>
+
+        <form id="ContactForm">
+            <label for="name">Ваше имя</label>
+            <input type="text" id="name" name="name" placeholder="Иванов Иван Иванович">
+
+            <label for="phone">Номер телефона</label>
+            <input type="text" id="phone" name="phone" placeholder="+7-999-999-99-99">
+
+            <label for="email">Ваш e-mail</label>
+            <input type="text" id="email" name="email" placeholder="test@gmail.com">
+
+            <label for="course">Ваш курс</label>
+            <select id="course" name="course">
+                <option value="">---</option>
+                <option value="1">1 курс</option>
+                <option value="2">2 курс</option>
+                <option value="3">3 курс</option>
+                <option value="4">4 курс</option>
+            </select>
+
+            <label for="course">Ваше сообщение</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+            
+            <button type="submit" id="submit-btn">Отправить</button>
+            <button type="reset" id="reset-btn">Очистить</button>
+
+        </form>
+    </main>
+</body>
+</html>
