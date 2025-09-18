@@ -1,0 +1,95 @@
+/*Данные стили применяются ко всем компонентам
+уберает все изначальные отступы*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input, button {
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    border: 3px solid purple;
+    border-radius: 10px;
+    padding: 4px;
+}
+
+input:focus {
+    background-color: aquamarine;
+}
+
+button {
+    padding: 4px;
+    border: 3px solid blue;
+    border-radius: 10px;
+    background-color: cornflowerblue;
+}
+
+button:hover {
+    background-color: aqua;
+}
+
+#ContactForm {
+    padding: 5px;
+    margin: 10px;
+    border: 3px solid plum;
+    border-radius: 10px; 
+    max-width: 250px;
+    background-color: darkgrey;
+}
+
+body {
+    background-image: url("img/background.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.error {
+    border: 5px;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: indianred;
+    color: floralwhite;
+}
+
+.media {
+    padding: 4px;
+    border: 3px solid blue;
+    background-color: cadetblue;
+    max-width: 730px;
+    max-height: 430px;
+}
+
+dialog {
+    padding: 1.25rem;
+    border: none;
+    border-radius: 12px;
+    background-position: center;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, .5);
+}
+
+.form-actions {
+    display: flex;
+    gap: .5rem;
+    margin-top: 1rem;
+}
+
+#dialogTitle {
+    margin-left: 30px;
+}
