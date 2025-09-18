@@ -2,19 +2,17 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <!--  Важная мета-информация для корректного отображения на мобильных устройствах
- -->
     <meta property="og:type" content="website"> 
     <meta property="og:title" content="Главная"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная</title>
     <meta name="description" content="Краткое описание главной страницы сайта">
-    <!-- Подключение фавиконки -->
+    <link rel="stylesheet" href="../static/styles.css">
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
-        <a href="/">Логотип или название сайта</a>
+        <h1>Мой сайт</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Главная</a></li>
@@ -27,6 +25,19 @@
     <main>
         <h1>Добро пожаловать на наш сайт!</h1>
 
+        <div class="media">
+              
+            <iframe
+                width="720"
+                height="405"
+                src="https://rutube.ru/play/embed/7a8995dd3926fd40a8c61fb637dfdbf4"
+                style="border: none;"
+                allow="clipboard-write; autoplay"
+                allowFullScreen
+            ></iframe>
+    
+        </div>
+
         <section id="services">
             <h2>Наши услуги</h2>
             <p>Описание предоставляемых услуг...</p>
@@ -36,18 +47,52 @@
         <section id="portfolio">
             <h2>Портфолио</h2>
             <p>Примеры наших работ...</p>
-        </section id="contacts">
+        </section>
+        <section id="contacts">
             <h2>Контактная информация</h2>
             <p>Наши контакты...</p>
             <a href="contacts.html">Подробнее</a>
-        <section>
-
         </section>
+        
+        <button id="openDialog" type="button">Написать нам</button>
+
+        <dialog id="contactDialog" aria-labelledby="dialogTitle">
+            <h2 id="dialogTitle">Обратная связь</h2>
+
+            <form id="ContactForm">
+                <label for="name">Ваше имя</label>
+                <input type="text" id="name" name="name" placeholder="Иванов Иван Иванович">
+
+                <label for="phone">Номер телефона</label>
+                <input type="text" id="phone" name="phone" placeholder="+7-999-999-99-99">
+
+                <label for="email">Ваш e-mail</label>
+                <input type="text" id="email" name="email" placeholder="test@gmail.com">
+
+                <label for="course">Ваш курс</label>
+                <select id="course" name="course">
+                    <option value="">---</option>
+                    <option value="1">1 курс</option>
+                    <option value="2">2 курс</option>
+                    <option value="3">3 курс</option>
+                    <option value="4">4 курс</option>
+                </select>
+
+                <label for="course">Ваше сообщение</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+                
+                <button type="submit" id="submitDialog">Отправить</button>
+                <button type="buttom" id="clsoeDialog">Закрыть</button>
+
+            </form>
+        </dialog>
     </main>
 
     <footer>
         <p>&copy; 2023 Сайт. Все права защищены.</p>
         <p>Телефон: +7 (123) 456-78-90</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
