@@ -13,6 +13,24 @@
 <body>
     <header>
         <h1>Мой сайт</h1>
+
+        <button class="theme-toggle" type="button" aria-pressed="false">Тема</button>
+        <script defer>
+            const KEY='theme', btn=document.querySelector('.theme-toggle');
+            const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
+
+            if (localStorage.getItem(KEY) === 'dark' || (!localStorage.getItem(KEY) && prefersDark)) {
+                document.body.classList.add('theme-dark');
+                btn?.setAttribute('aria-pressed', 'true');
+            }
+
+            btn?.addEventListener('click', () => {
+                const isDark=document.body.classList.toggle('theme-dark');
+                btn.setAttribute('aria-pressed', String(isDark));
+                localStorage.setItem(KEY, isDark ? 'dark' : 'light');
+            });
+        </script>
+
         <nav>
             <ul>
                 <li><a href="index.html">Главная</a></li>
@@ -38,54 +56,63 @@
     
         </div>
 
-        <section id="services">
-            <h2>Наши услуги</h2>
+        <section class="site-section" id="services">
+            <h2 class="section__title">Наши услуги</h2>
             <p>Описание предоставляемых услуг...</p>
             <a href="#contacts">Связаться с нами</a>
         </section>
 
-        <section id="portfolio">
-            <h2>Портфолио</h2>
+        <section class="site-section" id="portfolio">
+            <h2 class="section__title">Портфолио</h2>
             <p>Примеры наших работ...</p>
+
+            <img
+                class="card__img"
+                src="../static/img/project.png"
+                alt="Проект: макет мобильного приложнения"
+                width="360"
+                height="640"
+                loading="lazy" decoding="async">
+
         </section>
-        <section id="contacts">
-            <h2>Контактная информация</h2>
+
+        <section class="site-section" id="contacts">
+            <h2 class="section__title">Контактная информация</h2>
             <p>Наши контакты...</p>
-            <a href="contacts.html">Подробнее</a>
-        </section>
+            <a href="contacts.html">Подробнее</a><br>
         
-        <button id="openDialog" type="button">Написать нам</button>
+            <button id="openDialog" type="button">Написать нам</button>
 
-        <dialog id="contactDialog" aria-labelledby="dialogTitle">
-            <h2 id="dialogTitle">Обратная связь</h2>
+            <dialog class="contact-dialog" id="contactDialog" aria-labelledby="dialogTitle">
+                <h2 class="contact-dialog__title">Обратная связь</h2>
 
-            <form id="ContactForm">
-                <label for="name">Ваше имя</label>
-                <input type="text" id="name" name="name" placeholder="Иванов Иван Иванович">
+                <form class="content-dialog__form" id="ContactForm">
+                    <label for="name">Ваше имя</label>
+                    <input type="text" id="name" name="name" placeholder="Иванов Иван Иванович">
 
-                <label for="phone">Номер телефона</label>
-                <input type="text" id="phone" name="phone" placeholder="+7-999-999-99-99">
+                    <label for="phone">Номер телефона</label>
+                    <input type="text" id="phone" name="phone" placeholder="+7-999-999-99-99">
 
-                <label for="email">Ваш e-mail</label>
-                <input type="text" id="email" name="email" placeholder="test@gmail.com">
+                    <label for="email">Ваш e-mail</label>
+                    <input type="text" id="email" name="email" placeholder="test@gmail.com">
 
-                <label for="course">Ваш курс</label>
-                <select id="course" name="course">
-                    <option value="">---</option>
-                    <option value="1">1 курс</option>
-                    <option value="2">2 курс</option>
-                    <option value="3">3 курс</option>
-                    <option value="4">4 курс</option>
-                </select>
+                    <label for="course">Ваш курс</label>
+                    <select id="course" name="course">
+                        <option value="">---</option>
+                        <option value="1">1 курс</option>
+                        <option value="2">2 курс</option>
+                        <option value="3">3 курс</option>
+                        <option value="4">4 курс</option>
+                    </select>
 
-                <label for="course">Ваше сообщение</label>
-                <textarea id="message" name="message" rows="4"></textarea>
-                
-                <button type="submit" id="submitDialog">Отправить</button>
-                <button type="buttom" id="clsoeDialog">Закрыть</button>
-
-            </form>
-        </dialog>
+                    <label for="course">Ваше сообщение</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                    
+                    <button type="submit" id="submitDialog">Отправить</button>
+                    <button type="buttom" id="clsoeDialog">Закрыть</button>
+                </form>
+            </dialog>
+        </section>
     </main>
 
     <footer>
